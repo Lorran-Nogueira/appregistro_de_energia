@@ -88,12 +88,13 @@ class ClientHttpDio implements ClientHttp {
         data: request.body,
         queryParameters: request.queryParamns,
       );
-
+      log('teste: ${response.data}');
       return Response<T>(
         data: response.data,
         status: response.statusCode,
       );
     } on dio_import.DioException catch (e, s) {
+      log(e.response?.statusCode.toString() ?? 'ND');
       throw HttpError(
         error: e,
         stackTrace: s,

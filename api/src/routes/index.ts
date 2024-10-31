@@ -124,6 +124,6 @@ app.delete("/leitura", async (req, res) => {
         return res.status(500).json({ error: error.message });
     }
 });
-app.listen(port, () => {
+app.listen(3000,"0.0.0.0", () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
 });
